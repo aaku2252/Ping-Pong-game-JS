@@ -7,7 +7,28 @@
         <link rel="stylesheet" href="input.css" />
         <link rel="stylesheet" href="style.css" />
     </head>
-    <body>
-        
+    <body class="bg-slate-800 w-screen h-screen">
+        <div>
+            <div
+                class="container relative border-4 border-slate-400 h-screen flex flex-col items-center justify-between"
+            >
+                <div
+                    class="absolute top-3 right-5 bg-slate-500 text-slate-300 flex flex-col items-center font-semibold py-1 px-5 bg-opacity-20 rounded-lg"
+                >
+                    <p class="text-xl">Max Score</p>
+                    <div class="flex justify-between text-lg w-[100%]">
+                        <p class="player">Player</p>
+                        <span>:</span>
+                        <span class="score">0</span>
+                    </div>
+                </div>
+                <div class="upper w-[150px] bg-white h-4 rounded-lg"></div>
+                <div
+                    class="ball max-w-sm bg-white w-4 h-4 rounded-xl absolute bottom-4"
+                ></div>
+                <div class="lower w-[150px] bg-white h-4 rounded-lg"></div>
+            </div>
+        </div>
+        <script src="../script/script.js"></script>
     </body>
 </html>
