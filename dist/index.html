@@ -4,8 +4,9 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Ping Pong Game</title>
-        <link rel="stylesheet" href="input.css" />
-        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" type="text/css" href="input.css" />
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <style></style>
     </head>
     <body class="bg-slate-800 w-screen h-screen">
         <div>
@@ -24,7 +25,7 @@
                 </div>
                 <div class="upper w-[150px] bg-white h-4 rounded-lg"></div>
                 <div
-                    class="ball max-w-sm bg-white w-4 h-4 rounded-xl absolute bottom-4"
+                    class="ball w-sm bg-white w-4 h-4 rounded-xl absolute bottom-4"
                 ></div>
                 <div class="lower w-[150px] bg-white h-4 rounded-lg"></div>
             </div>
@@ -32,3 +33,4 @@
         <script src="../script/script.js"></script>
     </body>
 </html>
+<!-- npx tailwindcss -i ./src/input.css -o ./dist/input.css --watch -->
