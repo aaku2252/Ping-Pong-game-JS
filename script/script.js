@@ -86,11 +86,14 @@ function endGame() {
         } else {
             startDown = true;
         }
+        localStorageHighScore();
         startPosition();
     }
     end.style.zIndex = 5;
     end.style.visibility = "visible";
     endMenu();
+    localStorageHighScore();
+    highScoreVal.textContent = localStorage.getItem("highScore");
     playerScore = 0;
 }
 
@@ -159,6 +162,8 @@ function moveTheBall() {
         }
     }
 }
+
+// sensitivity of the moevemtn of pad movement
 
 let sensitivity = 50;
 
@@ -256,12 +261,24 @@ const score = document.querySelector(".score");
 const scoreEnd = document.querySelector(".scoreEnd");
 const endButton = document.querySelector(".endbutton");
 const end = document.querySelector(".end");
+const highScoreVal = document.querySelector(".highScore");
 
 let play;
 
-//!!!!!!! temporary code only for production
+//> local storage high score
+
+let highScore = localStorage.getItem("highScore");
+
+function localStorageHighScore() {
+    if (!highScore) {
+        localStorage.setItem("highScore", playerScore);
+    } else if (playerScore > highScore) {
+        localStorage.setItem("highScore", playerScore);
+    }
+}
 
 /////////////////////////////////////////////////////////////////
+//> optimising the start menu
 function startMenu() {
     button.addEventListener("click", () => {
         if (input.value.length > 1) {
@@ -274,6 +291,7 @@ function startMenu() {
     });
 }
 
+//> end menu after the end of game
 function endMenu() {
     scoreEnd.textContent = playerScore;
     endButton.addEventListener("click", () => {
@@ -282,6 +300,7 @@ function endMenu() {
     });
 }
 
+// enter button to start the game
 function enterButton() {
     document.addEventListener("keydown", (e) => {
         if (e.key === "Enter") {
@@ -292,5 +311,6 @@ function enterButton() {
     });
 }
 
+highScoreVal.textContent = highScore;
 startMenu();
 enterButton();
